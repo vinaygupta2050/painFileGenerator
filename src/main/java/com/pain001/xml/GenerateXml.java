@@ -104,7 +104,7 @@ public class GenerateXml {
             System.out.println("A new XML file has been created at " + updatedXmlFilePath);
 
             // Validate the updated XML file against the XSD schema
-            boolean isValid = validateViaXsd(updatedXmlFilePath, xsdFilePath);
+            boolean isValid = com.pain001.xml.XmlValidator.validateViaXsd(updatedXmlFilePath, xsdFilePath);
 
             if (!isValid) {
                 System.out.println("Error: Invalid XML data.");
@@ -153,7 +153,6 @@ public class GenerateXml {
                 templateData.put("debtor_country_code", firstRow.get("debtor_country_code"));
                 templateData.put("debtor_account_IBAN", firstRow.get("debtor_account_IBAN"));
                 templateData.put("debtor_agent_BIC", firstRow.get("debtor_agent_BIC"));
-                templateData.put("charge_bearer", firstRow.get("charge_bearer"));
                 String nbOfTxsStr = getOrDefault(firstRow, "nb_of_txs", String.valueOf(data.size()));
                 int nbOfTxs;
                 try {
@@ -396,33 +395,27 @@ public class GenerateXml {
                 templateData.put("debtor_country",firstRow.get("debtor_country"));
                 templateData.put("debtor_account_IBAN",firstRow.get("debtor_account_IBAN"));
                 templateData.put("debtor_agent_BIC",firstRow.get("debtor_agent_BIC"));
-                templateData.put("payment_instruction_id",firstRow.get("payment_instruction_id"));
-                templateData.put("payment_end_to_end_id",firstRow.get("payment_end_to_end_id"));
-                templateData.put("payment_currency",firstRow.get("payment_currency"));
-                templateData.put("payment_amount",firstRow.get("payment_amount"));
-                templateData.put("charge_bearer",firstRow.get("charge_bearer"));
-                templateData.put("creditor_name",firstRow.get("creditor_name"));
-                templateData.put("creditor_street",firstRow.get("creditor_street"));
-                templateData.put("creditor_building_number",firstRow.get("creditor_building_number"));
-                templateData.put("creditor_postal_code",firstRow.get("creditor_postal_code"));
-                templateData.put("creditor_town",firstRow.get("creditor_town"));
-                templateData.put("creditor_country",firstRow.get("creditor_country"));
-                templateData.put("creditor_account_IBAN",firstRow.get("creditor_account_IBAN"));
-                templateData.put("creditor_agent_BICFI",firstRow.get("creditor_agent_BICFI"));
-                templateData.put("purpose_code",firstRow.get("purpose_code"));
-                templateData.put("reference_number",firstRow.get("reference_number"));
-                templateData.put("reference_date",firstRow.get("reference_date"));
                 List<Map<String, String>> transactionV7 = new ArrayList<>();
                 for (Map<String, String> row : data) {
                     Map<String, String> transaction = new HashMap<>();
+                    transaction.put("payment_instruction_id",row.get("payment_instruction_id"));
+                    transaction.put("payment_end_to_end_id",row.get("payment_end_to_end_id"));
                     transaction.put("payment_id", row.get("payment_id"));
                     transaction.put("payment_amount", row.getOrDefault("payment_amount", ""));
                     transaction.put("payment_currency", row.getOrDefault("payment_currency", ""));
                     transaction.put("charge_bearer", row.get("charge_bearer"));
-                    transaction.put("creditor_agent_BIC", row.get("creditor_agent_BIC"));
-                    transaction.put("creditor_name", row.get("creditor_name"));
-                    transaction.put("creditor_account_IBAN", row.get("creditor_account_IBAN"));
+                    transaction.put("creditor_name",row.get("creditor_name"));
+                    transaction.put("creditor_street",row.get("creditor_street"));
+                    transaction.put("creditor_building_number",row.get("creditor_building_number"));
+                    transaction.put("creditor_postal_code",row.get("creditor_postal_code"));
+                    transaction.put("creditor_town",row.get("creditor_town"));
+                    transaction.put("creditor_country",row.get("creditor_country"));
+                    transaction.put("creditor_account_IBAN",row.get("creditor_account_IBAN"));
+                    transaction.put("creditor_agent_BICFI",row.get("creditor_agent_BICFI"));
                     transaction.put("creditor_remittance_information", row.get("creditor_remittance_information"));
+                    transaction.put("purpose_code",row.get("purpose_code"));
+                    transaction.put("reference_number",row.get("reference_number"));
+                    transaction.put("reference_date",row.get("reference_date"));
                     transactionV7.add(transaction);
                 }
                 templateData.put("transactions", transactionV7);
@@ -450,33 +443,26 @@ public class GenerateXml {
                 templateData.put("debtor_country",firstRow.get("debtor_country"));
                 templateData.put("debtor_account_IBAN",firstRow.get("debtor_account_IBAN"));
                 templateData.put("debtor_agent_BIC",firstRow.get("debtor_agent_BIC"));
-                templateData.put("payment_instruction_id",firstRow.get("payment_instruction_id"));
-                templateData.put("payment_end_to_end_id",firstRow.get("payment_end_to_end_id"));
-                templateData.put("payment_currency",firstRow.get("payment_currency"));
-                templateData.put("payment_amount",firstRow.get("payment_amount"));
-                templateData.put("charge_bearer",firstRow.get("charge_bearer"));
-                templateData.put("creditor_name",firstRow.get("creditor_name"));
-                templateData.put("creditor_street",firstRow.get("creditor_street"));
-                templateData.put("creditor_building_number",firstRow.get("creditor_building_number"));
-                templateData.put("creditor_postal_code",firstRow.get("creditor_postal_code"));
-                templateData.put("creditor_town",firstRow.get("creditor_town"));
-                templateData.put("creditor_country",firstRow.get("creditor_country"));
-                templateData.put("creditor_account_IBAN",firstRow.get("creditor_account_IBAN"));
-                templateData.put("creditor_agent_BICFI",firstRow.get("creditor_agent_BICFI"));
-                templateData.put("purpose_code",firstRow.get("purpose_code"));
-                templateData.put("reference_number",firstRow.get("reference_number"));
-                templateData.put("reference_date",firstRow.get("reference_date"));
                 List<Map<String, String>> transactionV8 = new ArrayList<>();
                 for (Map<String, String> row : data) {
                     Map<String, String> transaction = new HashMap<>();
-                    transaction.put("payment_id", row.get("payment_id"));
-                    transaction.put("payment_amount", row.getOrDefault("payment_amount", ""));
-                    transaction.put("payment_currency", row.getOrDefault("payment_currency", ""));
-                    transaction.put("charge_bearer", row.get("charge_bearer"));
-                    transaction.put("creditor_agent_BIC", row.get("creditor_agent_BIC"));
-                    transaction.put("creditor_name", row.get("creditor_name"));
-                    transaction.put("creditor_account_IBAN", row.get("creditor_account_IBAN"));
-                    transaction.put("creditor_remittance_information", row.get("creditor_remittance_information"));
+                    transaction.put("payment_id",row.get("payment_id"));
+                    transaction.put("payment_instruction_id",row.get("payment_instruction_id"));
+                    transaction.put("payment_end_to_end_id",row.get("payment_end_to_end_id"));
+                    transaction.put("payment_currency",row.get("payment_currency"));
+                    transaction.put("payment_amount",row.get("payment_amount"));
+                    transaction.put("charge_bearer",row.get("charge_bearer"));
+                    transaction.put("creditor_name",row.get("creditor_name"));
+                    transaction.put("creditor_street",row.get("creditor_street"));
+                    transaction.put("creditor_building_number",row.get("creditor_building_number"));
+                    transaction.put("creditor_postal_code",row.get("creditor_postal_code"));
+                    transaction.put("creditor_town",row.get("creditor_town"));
+                    transaction.put("creditor_country",row.get("creditor_country"));
+                    transaction.put("creditor_account_IBAN",row.get("creditor_account_IBAN"));
+                    transaction.put("creditor_agent_BICFI",row.get("creditor_agent_BICFI"));
+                    transaction.put("purpose_code",row.get("purpose_code"));
+                    transaction.put("reference_number",row.get("reference_number"));
+                    transaction.put("reference_date",row.get("reference_date"));
                     transactionV8.add(transaction);
                 }
                 templateData.put("transactions", transactionV8);

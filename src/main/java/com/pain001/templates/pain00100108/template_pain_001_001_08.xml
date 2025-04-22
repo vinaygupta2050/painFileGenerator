@@ -6,8 +6,8 @@
         <GrpHdr>
             <MsgId>1</MsgId>
             <CreDtTm>2023-01-01T12:00:00</CreDtTm>
-            <NbOfTxs>1</NbOfTxs>
-            <CtrlSum>500.75</CtrlSum>
+            <NbOfTxs>3</NbOfTxs>
+            <CtrlSum>1030.25</CtrlSum>
             <InitgPty>
                 <Nm>John Doe</Nm>
                 <PstlAdr>
@@ -51,41 +51,425 @@
 
                 <CdtTrfTxInf>
                     <PmtId>
-                        <InstrId>FreeMarker template error (DEBUG mode; use RETHROW in production!):
-The following has evaluated to null or missing:
-==> tx.payment_instruction_id  [in template "pain00100108/template.ftl" at line 55, column 36]
+                        <InstrId>PI001</InstrId>
+                        <EndToEndId>EE001</EndToEndId>
+                    </PmtId>
+                    <Amt>
+                        <InstdAmt Ccy="EUR">100</InstdAmt>
+                    </Amt>
+                    <ChrgBr>SLEV</ChrgBr>
+                    <CdtrAgt>
+                        <FinInstnId>
+                            <BICFI>BANKEU2L</BICFI>
+                        </FinInstnId>
+                    </CdtrAgt>
+                    <Cdtr>
+                        <Nm>ABC Corp</Nm>
+                        <PstlAdr>
+                            <AdrLine>Church St</AdrLine>
+                            <AdrLine>5</AdrLine>
+                            <AdrLine>54321</AdrLine>
+                            <AdrLine>Paris</AdrLine>
+                        </PstlAdr>
+                    </Cdtr>
+                    <CdtrAcct>
+                        <Id>
+                            <Othr>
+                                <Id>FR123456789</Id>
+                            </Othr>
+                        </Id>
+                    </CdtrAcct>
+                    <Purp>
+                        <Cd>INV</Cd>
+                    </Purp>
+                    <RmtInf>
+                        <Strd>
+                            <RfrdDocInf>
+                                <Nb>123</Nb>
+                                <RltdDt>2023-02-01</RltdDt>
+                            </RfrdDocInf>
+                        </Strd>
+                    </RmtInf>
+                </CdtTrfTxInf>
+                <CdtTrfTxInf>
+                    <PmtId>
+                        <InstrId>PI002</InstrId>
+                        <EndToEndId>EE002</EndToEndId>
+                    </PmtId>
+                    <Amt>
+                        <InstdAmt Ccy="EUR">120</InstdAmt>
+                    </Amt>
+                    <ChrgBr>SLEV</ChrgBr>
+                    <CdtrAgt>
+                        <FinInstnId>
+                            <BICFI>DEUTDEFF</BICFI>
+                        </FinInstnId>
+                    </CdtrAgt>
+                    <Cdtr>
+                        <Nm>XYZ Ltd</Nm>
+                        <PstlAdr>
+                            <AdrLine>High St</AdrLine>
+                            <AdrLine>10</AdrLine>
+                            <AdrLine>56789</AdrLine>
+                            <AdrLine>Berlin</AdrLine>
+                        </PstlAdr>
+                    </Cdtr>
+                    <CdtrAcct>
+                        <Id>
+                            <Othr>
+                                <Id>DE987654321</Id>
+                            </Othr>
+                        </Id>
+                    </CdtrAcct>
+                    <Purp>
+                        <Cd>INV</Cd>
+                    </Purp>
+                    <RmtInf>
+                        <Strd>
+                            <RfrdDocInf>
+                                <Nb>124</Nb>
+                                <RltdDt>2023-02-02</RltdDt>
+                            </RfrdDocInf>
+                        </Strd>
+                    </RmtInf>
+                </CdtTrfTxInf>
+                <CdtTrfTxInf>
+                    <PmtId>
+                        <InstrId>PI003</InstrId>
+                        <EndToEndId>EE003</EndToEndId>
+                    </PmtId>
+                    <Amt>
+                        <InstdAmt Ccy="EUR">90</InstdAmt>
+                    </Amt>
+                    <ChrgBr>SLEV</ChrgBr>
+                    <CdtrAgt>
+                        <FinInstnId>
+                            <BICFI>BPPIITRRXXX</BICFI>
+                        </FinInstnId>
+                    </CdtrAgt>
+                    <Cdtr>
+                        <Nm>LMN Inc</Nm>
+                        <PstlAdr>
+                            <AdrLine>Market St</AdrLine>
+                            <AdrLine>7</AdrLine>
+                            <AdrLine>11223</AdrLine>
+                            <AdrLine>Rome</AdrLine>
+                        </PstlAdr>
+                    </Cdtr>
+                    <CdtrAcct>
+                        <Id>
+                            <Othr>
+                                <Id>IT123456789</Id>
+                            </Othr>
+                        </Id>
+                    </CdtrAcct>
+                    <Purp>
+                        <Cd>INV</Cd>
+                    </Purp>
+                    <RmtInf>
+                        <Strd>
+                            <RfrdDocInf>
+                                <Nb>125</Nb>
+                                <RltdDt>2023-02-03</RltdDt>
+                            </RfrdDocInf>
+                        </Strd>
+                    </RmtInf>
+                </CdtTrfTxInf>
+                <CdtTrfTxInf>
+                    <PmtId>
+                        <InstrId>PI004</InstrId>
+                        <EndToEndId>EE004</EndToEndId>
+                    </PmtId>
+                    <Amt>
+                        <InstdAmt Ccy="EUR">80</InstdAmt>
+                    </Amt>
+                    <ChrgBr>SLEV</ChrgBr>
+                    <CdtrAgt>
+                        <FinInstnId>
+                            <BICFI>UBSWCHZH80A</BICFI>
+                        </FinInstnId>
+                    </CdtrAgt>
+                    <Cdtr>
+                        <Nm>Delta GmbH</Nm>
+                        <PstlAdr>
+                            <AdrLine>Ringstrasse</AdrLine>
+                            <AdrLine>12</AdrLine>
+                            <AdrLine>99887</AdrLine>
+                            <AdrLine>Zurich</AdrLine>
+                        </PstlAdr>
+                    </Cdtr>
+                    <CdtrAcct>
+                        <Id>
+                            <Othr>
+                                <Id>CH9300762011623852957</Id>
+                            </Othr>
+                        </Id>
+                    </CdtrAcct>
+                    <Purp>
+                        <Cd>INV</Cd>
+                    </Purp>
+                    <RmtInf>
+                        <Strd>
+                            <RfrdDocInf>
+                                <Nb>126</Nb>
+                                <RltdDt>2023-02-04</RltdDt>
+                            </RfrdDocInf>
+                        </Strd>
+                    </RmtInf>
+                </CdtTrfTxInf>
+                <CdtTrfTxInf>
+                    <PmtId>
+                        <InstrId>PI005</InstrId>
+                        <EndToEndId>EE005</EndToEndId>
+                    </PmtId>
+                    <Amt>
+                        <InstdAmt Ccy="EUR">150</InstdAmt>
+                    </Amt>
+                    <ChrgBr>SLEV</ChrgBr>
+                    <CdtrAgt>
+                        <FinInstnId>
+                            <BICFI>EEUHEE2X</BICFI>
+                        </FinInstnId>
+                    </CdtrAgt>
+                    <Cdtr>
+                        <Nm>Epsilon OÜ</Nm>
+                        <PstlAdr>
+                            <AdrLine>Põhja pst</AdrLine>
+                            <AdrLine>2</AdrLine>
+                            <AdrLine>10123</AdrLine>
+                            <AdrLine>Tallinn</AdrLine>
+                        </PstlAdr>
+                    </Cdtr>
+                    <CdtrAcct>
+                        <Id>
+                            <Othr>
+                                <Id>EE382200221020145685</Id>
+                            </Othr>
+                        </Id>
+                    </CdtrAcct>
+                    <Purp>
+                        <Cd>INV</Cd>
+                    </Purp>
+                    <RmtInf>
+                        <Strd>
+                            <RfrdDocInf>
+                                <Nb>127</Nb>
+                                <RltdDt>2023-02-05</RltdDt>
+                            </RfrdDocInf>
+                        </Strd>
+                    </RmtInf>
+                </CdtTrfTxInf>
+                <CdtTrfTxInf>
+                    <PmtId>
+                        <InstrId>PI006</InstrId>
+                        <EndToEndId>EE006</EndToEndId>
+                    </PmtId>
+                    <Amt>
+                        <InstdAmt Ccy="EUR">70</InstdAmt>
+                    </Amt>
+                    <ChrgBr>SLEV</ChrgBr>
+                    <CdtrAgt>
+                        <FinInstnId>
+                            <BICFI>BRBDBRSPSPO</BICFI>
+                        </FinInstnId>
+                    </CdtrAgt>
+                    <Cdtr>
+                        <Nm>Bravo SA</Nm>
+                        <PstlAdr>
+                            <AdrLine>Av. Paulista</AdrLine>
+                            <AdrLine>20</AdrLine>
+                            <AdrLine>01310</AdrLine>
+                            <AdrLine>São Paulo</AdrLine>
+                        </PstlAdr>
+                    </Cdtr>
+                    <CdtrAcct>
+                        <Id>
+                            <Othr>
+                                <Id>BR1800000000141455123921</Id>
+                            </Othr>
+                        </Id>
+                    </CdtrAcct>
+                    <Purp>
+                        <Cd>INV</Cd>
+                    </Purp>
+                    <RmtInf>
+                        <Strd>
+                            <RfrdDocInf>
+                                <Nb>128</Nb>
+                                <RltdDt>2023-02-06</RltdDt>
+                            </RfrdDocInf>
+                        </Strd>
+                    </RmtInf>
+                </CdtTrfTxInf>
+                <CdtTrfTxInf>
+                    <PmtId>
+                        <InstrId>PI007</InstrId>
+                        <EndToEndId>EE007</EndToEndId>
+                    </PmtId>
+                    <Amt>
+                        <InstdAmt Ccy="EUR">120</InstdAmt>
+                    </Amt>
+                    <ChrgBr>SLEV</ChrgBr>
+                    <CdtrAgt>
+                        <FinInstnId>
+                            <BICFI>AGRIFRPP</BICFI>
+                        </FinInstnId>
+                    </CdtrAgt>
+                    <Cdtr>
+                        <Nm>Omega SARL</Nm>
+                        <PstlAdr>
+                            <AdrLine>Rue Lafayette</AdrLine>
+                            <AdrLine>18</AdrLine>
+                            <AdrLine>75009</AdrLine>
+                            <AdrLine>Paris</AdrLine>
+                        </PstlAdr>
+                    </Cdtr>
+                    <CdtrAcct>
+                        <Id>
+                            <Othr>
+                                <Id>FR7630006000011234567890189</Id>
+                            </Othr>
+                        </Id>
+                    </CdtrAcct>
+                    <Purp>
+                        <Cd>INV</Cd>
+                    </Purp>
+                    <RmtInf>
+                        <Strd>
+                            <RfrdDocInf>
+                                <Nb>129</Nb>
+                                <RltdDt>2023-02-07</RltdDt>
+                            </RfrdDocInf>
+                        </Strd>
+                    </RmtInf>
+                </CdtTrfTxInf>
+                <CdtTrfTxInf>
+                    <PmtId>
+                        <InstrId>PI008</InstrId>
+                        <EndToEndId>EE008</EndToEndId>
+                    </PmtId>
+                    <Amt>
+                        <InstdAmt Ccy="EUR">100</InstdAmt>
+                    </Amt>
+                    <ChrgBr>SLEV</ChrgBr>
+                    <CdtrAgt>
+                        <FinInstnId>
+                            <BICFI>DNBANOKK</BICFI>
+                        </FinInstnId>
+                    </CdtrAgt>
+                    <Cdtr>
+                        <Nm>Sigma Ltd</Nm>
+                        <PstlAdr>
+                            <AdrLine>Karl Johans gate</AdrLine>
+                            <AdrLine>11</AdrLine>
+                            <AdrLine>0154</AdrLine>
+                            <AdrLine>Oslo</AdrLine>
+                        </PstlAdr>
+                    </Cdtr>
+                    <CdtrAcct>
+                        <Id>
+                            <Othr>
+                                <Id>NO9386011807321</Id>
+                            </Othr>
+                        </Id>
+                    </CdtrAcct>
+                    <Purp>
+                        <Cd>INV</Cd>
+                    </Purp>
+                    <RmtInf>
+                        <Strd>
+                            <RfrdDocInf>
+                                <Nb>130</Nb>
+                                <RltdDt>2023-02-08</RltdDt>
+                            </RfrdDocInf>
+                        </Strd>
+                    </RmtInf>
+                </CdtTrfTxInf>
+                <CdtTrfTxInf>
+                    <PmtId>
+                        <InstrId>PI009</InstrId>
+                        <EndToEndId>EE009</EndToEndId>
+                    </PmtId>
+                    <Amt>
+                        <InstdAmt Ccy="EUR">100.25</InstdAmt>
+                    </Amt>
+                    <ChrgBr>SLEV</ChrgBr>
+                    <CdtrAgt>
+                        <FinInstnId>
+                            <BICFI>BCITITMM</BICFI>
+                        </FinInstnId>
+                    </CdtrAgt>
+                    <Cdtr>
+                        <Nm>Theta SpA</Nm>
+                        <PstlAdr>
+                            <AdrLine>Via Roma</AdrLine>
+                            <AdrLine>22</AdrLine>
+                            <AdrLine>00185</AdrLine>
+                            <AdrLine>Rome</AdrLine>
+                        </PstlAdr>
+                    </Cdtr>
+                    <CdtrAcct>
+                        <Id>
+                            <Othr>
+                                <Id>IT60X0542811101000000123456</Id>
+                            </Othr>
+                        </Id>
+                    </CdtrAcct>
+                    <Purp>
+                        <Cd>INV</Cd>
+                    </Purp>
+                    <RmtInf>
+                        <Strd>
+                            <RfrdDocInf>
+                                <Nb>131</Nb>
+                                <RltdDt>2023-02-09</RltdDt>
+                            </RfrdDocInf>
+                        </Strd>
+                    </RmtInf>
+                </CdtTrfTxInf>
+                <CdtTrfTxInf>
+                    <PmtId>
+                        <InstrId>PI010</InstrId>
+                        <EndToEndId>EE010</EndToEndId>
+                    </PmtId>
+                    <Amt>
+                        <InstdAmt Ccy="EUR">100</InstdAmt>
+                    </Amt>
+                    <ChrgBr>SLEV</ChrgBr>
+                    <CdtrAgt>
+                        <FinInstnId>
+                            <BICFI>NWBKGB2L</BICFI>
+                        </FinInstnId>
+                    </CdtrAgt>
+                    <Cdtr>
+                        <Nm>Alpha PLC</Nm>
+                        <PstlAdr>
+                            <AdrLine>King St</AdrLine>
+                            <AdrLine>50</AdrLine>
+                            <AdrLine>AB12CD</AdrLine>
+                            <AdrLine>Edinburgh</AdrLine>
+                        </PstlAdr>
+                    </Cdtr>
+                    <CdtrAcct>
+                        <Id>
+                            <Othr>
+                                <Id>GB29NWBK60161331926819</Id>
+                            </Othr>
+                        </Id>
+                    </CdtrAcct>
+                    <Purp>
+                        <Cd>INV</Cd>
+                    </Purp>
+                    <RmtInf>
+                        <Strd>
+                            <RfrdDocInf>
+                                <Nb>132</Nb>
+                                <RltdDt>2023-02-10</RltdDt>
+                            </RfrdDocInf>
+                        </Strd>
+                    </RmtInf>
+                </CdtTrfTxInf>
 
-----
-Tip: It's the step after the last dot that caused this error, not those before it.
-----
-Tip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
-
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: ${tx.payment_instruction_id}  [in template "pain00100108/template.ftl" at line 55, column 34]
-----
-
-Java stack trace (for programmers):
-----
-freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
-	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:134)
-	at freemarker.core.EvalUtil.coerceModelToTextualCommon(EvalUtil.java:490)
-	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:410)
-	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:379)
-	at freemarker.core.DollarVariable.calculateInterpolatedStringOrMarkup(DollarVariable.java:104)
-	at freemarker.core.DollarVariable.accept(DollarVariable.java:63)
-	at freemarker.core.Environment.visit(Environment.java:380)
-	at freemarker.core.IteratorBlock$IterationContext.executedNestedContentForCollOrSeqListing(IteratorBlock.java:321)
-	at freemarker.core.IteratorBlock$IterationContext.executeNestedContent(IteratorBlock.java:271)
-	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:244)
-	at freemarker.core.Environment.visitIteratorBlock(Environment.java:654)
-	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:108)
-	at freemarker.core.IteratorBlock.accept(IteratorBlock.java:94)
-	at freemarker.core.Environment.visit(Environment.java:344)
-	at freemarker.core.Environment.visit(Environment.java:350)
-	at freemarker.core.Environment.process(Environment.java:323)
-	at freemarker.template.Template.process(Template.java:383)
-	at com.pain001.xml.GenerateXml.generateXml(GenerateXml.java:101)
-	at com.pain001.core.CoreProcessor.processFiles(CoreProcessor.java:66)
-	at com.example.AppTest.main(AppTest.java:16)
+        </PmtInf>
+    </CstmrCdtTrfInitn>
+</Document>
