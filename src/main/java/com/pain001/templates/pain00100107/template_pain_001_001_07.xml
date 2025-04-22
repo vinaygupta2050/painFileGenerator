@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.07"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:pain.001.001.07 pain.001.001.07.xsd">
+    <CstmrCdtTrfInitn>
+        <GrpHdr>
+            <MsgId>1</MsgId>
+            <CreDtTm>2023-01-01T12:00:00</CreDtTm>
+            <NbOfTxs>1</NbOfTxs>
+            <CtrlSum>500.75</CtrlSum>
+            <InitgPty>
+                <Nm>John Doe</Nm>
+                <PstlAdr>
+                    <StrtNm>Main St</StrtNm>
+                    <BldgNb>123</BldgNb>
+                    <PstCd>12345</PstCd>
+                    <TwnNm>London</TwnNm>
+                    <Ctry>GB</Ctry>
+                </PstlAdr>
+            </InitgPty>
+        </GrpHdr>
+        <PmtInf>
+            <PmtInfId>Payment001</PmtInfId>
+            <PmtMtd>TRF</PmtMtd>
+            <BtchBookg>true</BtchBookg>
+            <ReqdExctnDt>2023-01-04</ReqdExctnDt>
+            <Dbtr>
+                <Nm>John Doe</Nm>
+                <PstlAdr>
+                    <StrtNm>Main St</StrtNm>
+                    <BldgNb>123</BldgNb>
+                    <PstCd>12345</PstCd>
+                    <TwnNm>London</TwnNm>
+                    <Ctry>GB</Ctry>
+                </PstlAdr>
+            </Dbtr>
+            <DbtrAcct>
+                <Id>
+                    <Othr>
+                        <Id>GB123456789</Id>
+                    </Othr>
+                </Id>
+            </DbtrAcct>
+            <DbtrAgt>
+                <FinInstnId>
+                    <BICFI>BANKGB2L</BICFI>
+                </FinInstnId>
+            </DbtrAgt>
+                <CdtTrfTxInf>
+                    <PmtId>
+                        <InstrId>FreeMarker template error (DEBUG mode; use RETHROW in production!):
+The following has evaluated to null or missing:
+==> tx.payment_instruction_id  [in template "pain00100107/template.ftl" at line 52, column 36]
+
+----
+Tip: It's the step after the last dot that caused this error, not those before it.
+----
+Tip: If the failing expression is known to legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${tx.payment_instruction_id}  [in template "pain00100107/template.ftl" at line 52, column 34]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:134)
+	at freemarker.core.EvalUtil.coerceModelToTextualCommon(EvalUtil.java:490)
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:410)
+	at freemarker.core.EvalUtil.coerceModelToStringOrMarkup(EvalUtil.java:379)
+	at freemarker.core.DollarVariable.calculateInterpolatedStringOrMarkup(DollarVariable.java:104)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:63)
+	at freemarker.core.Environment.visit(Environment.java:380)
+	at freemarker.core.IteratorBlock$IterationContext.executedNestedContentForCollOrSeqListing(IteratorBlock.java:321)
+	at freemarker.core.IteratorBlock$IterationContext.executeNestedContent(IteratorBlock.java:271)
+	at freemarker.core.IteratorBlock$IterationContext.accept(IteratorBlock.java:244)
+	at freemarker.core.Environment.visitIteratorBlock(Environment.java:654)
+	at freemarker.core.IteratorBlock.acceptWithResult(IteratorBlock.java:108)
+	at freemarker.core.IteratorBlock.accept(IteratorBlock.java:94)
+	at freemarker.core.Environment.visit(Environment.java:344)
+	at freemarker.core.Environment.visit(Environment.java:350)
+	at freemarker.core.Environment.process(Environment.java:323)
+	at freemarker.template.Template.process(Template.java:383)
+	at com.pain001.xml.GenerateXml.generateXml(GenerateXml.java:101)
+	at com.pain001.core.CoreProcessor.processFiles(CoreProcessor.java:66)
+	at com.example.AppTest.main(AppTest.java:16)
